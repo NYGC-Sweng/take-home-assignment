@@ -14,11 +14,11 @@ services:
     working_dir: /workspace
     command: tail -f /dev/null
   db:
-    image: postgres:16
+    image: postgres:18-trixie
     env_file:
       - .env
     volumes:
-      - db-pgdata:/var/lib/postgresql/data
+      - db-pgdata:/var/lib/postgresql/18/docker
       - ./sql:/docker-entrypoint-initdb.d
     ports:
       - 5432:5432

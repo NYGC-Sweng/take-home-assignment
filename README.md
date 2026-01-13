@@ -19,7 +19,7 @@ Good luck!
 For convenience, we have included a compressed CSV file of the dataset for you to work against and you should
 unzip this file locally.
 
-```sh
+```shell
 gunzip -c data/crime.csv.gz > data/crime.csv
 ```
 
@@ -39,8 +39,8 @@ if you are set up to do so.
 This assignment will review your basic proficiency in Python by having you perform an ETL operation on a 
 fixed CSV dataset. The ETL process should be run with the following command:
 
-```bash
-$ python -m scripts.run_etl
+```shell
+python -m scripts.run_etl
 ```
 
 Success criteria:
@@ -76,8 +76,8 @@ Assume that we will want to build a reporting application that will run queries 
 Postgres database. For convenience, we have provided a docker-compose file for a simple Postgres database that can
 be started as follows:
 
-```bash
-$ docker compose up db
+```shell
+docker compose up db
 ```
 
 The credentials can be found in the `.env` file at the root of this project.
@@ -100,8 +100,8 @@ the review session.
  with a Postgres database.
 
 **First**, start the docker container with the provided Postgres database.
-```sh
-$ docker compose up db
+```shell
+docker compose up db
 ```
 
 Upon container startup, this database will automatically be populated with a `interview_db.covid_state_stats` table.
@@ -110,14 +110,14 @@ available in the `.env` file.
 
 **Next**, install the project's dependencies, then run the flask application:
 
-```sh
-$ python -m api
+```shell
+python -m api
 
 # Use provided endpoint to verify that flask is able to establish a tcp connection with the database.
-$ curl http://localhost:5001/covid-stats/test-db-connection
+curl http://localhost:5001/covid-stats/test-db-connection
 
 # If debugging the api in docker, add the host=host.docker.internal to the url.
-$ curl http://localhost:5001/covid-stats/test-db-connection?host=host.docker.internal
+curl http://localhost:5001/covid-stats/test-db-connection?host=host.docker.internal
 ```
 
 **Finally**, create two api endpoints: one to serve records from the `covid_state_stats` table, and one to persist
@@ -154,10 +154,10 @@ from this assignment.
 **First**, navigate to the `ui` directory, install the project's dependencies, then run the development server with the
 below command.
 
-```sh
-$ cd ui
-$ npm install
-$ npm start
+```shell
+cd ui
+npm install
+npm start
 ```
 
 **Next**, implement a page displaying information from the api endpoint in [Assignment 3](#assignment-3---working-with-apis).
